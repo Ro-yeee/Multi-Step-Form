@@ -2,14 +2,14 @@ const StepNav = () => {
   return (
     <div className="relative flex-1">
       <img
-        src="./src/assets/images/bg-sidebar-desktop.svg"
-        alt=""
+        src="src/assets/images/bg-sidebar-desktop.svg"
+        alt="Background Desktop"
         className="absolute w-full h-full rounded-lg object-cover max-lg:hidden"
       />
       <img
-        src="./src/assets/images/bg-sidebar-mobile.svg"
-        alt=""
-        className="hidden  max-lg:block w-screen object-cover h-56 absolute w-full "
+        src="src/assets/images/bg-sidebar-mobile.svg"
+        alt="Background Mobile"
+        className="hidden  max-lg:block w-screen object-cover h-56 absolute "
       />
       <div className="z-50 relative">
         <h2>1</h2>
