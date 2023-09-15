@@ -1,4 +1,5 @@
 const NextButton = () => {
+  
   return (
     <button
       type="submit"
@@ -6,6 +7,6 @@ const NextButton = () => {
       Next Step
     </button>
   );
-}
+};
 
-export default NextButton
+export default NextButton;
