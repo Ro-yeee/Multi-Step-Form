@@ -1,4 +1,6 @@
-const Form2 = ({ values, handleChange, handleBlur }) => {
+import { Field } from 'formik';
+
+const Form2 = () => {
   return (
     <div className="overflow-auto flex flex-col gap-4 h-full w-full items-start font-mono text-left">
       <h2 className="text-Marine_blue font-black text-3xl tracking-[-2px]">
@@ -10,28 +12,22 @@ const Form2 = ({ values, handleChange, handleBlur }) => {
       <label className="text-Marine_blue font-semibold" htmlFor="fname">
         First Name
       </label>
-      <input
+      <Field
         type="text"
-        placeholder="e.g. Roy Joseph"
         id="fname"
+        placeholder="e.g. Roy Joseph"
         name="fname"
         className="border-Light_gray border-[1px] p-3 w-full rounded-xl"
-        onChange={handleChange}
-        onBlur={handleBlur}
-        value={values.fname}
       />
       <label className="text-Marine_blue font-semibold" htmlFor="lname">
         Last Name
       </label>
-      <input
+      <Field
         type="text"
-        placeholder="Joseph"
         id="lname"
+        placeholder="Joseph"
         name="lname"
         className="border-Light_gray border-[1px] p-3 w-full rounded-xl"
-        onChange={handleChange}
-        onBlur={handleBlur}
-        value={values.lname}
       />
     </div>
   );
