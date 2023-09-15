@@ -1,5 +1,4 @@
-
-const Form = ({values ,handleChange, handleBlur}) => {
+const Form = ({ values, handleChange, handleBlur }) => {
   return (
     <div className="overflow-auto flex flex-col gap-4 h-full w-full items-start font-mono text-left">
       <h2 className="text-Marine_blue font-black text-3xl tracking-[-2px]">

@@ -1,5 +1,4 @@
 const NextButton = () => {
-  
   return (
     <button
       type="submit"
