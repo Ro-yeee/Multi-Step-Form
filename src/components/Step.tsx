@@ -1,4 +1,3 @@
-import React from 'react'
 
 const Step = (props:{index: number, detail: string}) => {
   return (
