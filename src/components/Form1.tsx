@@ -7,7 +7,7 @@ const Form1 = () => {
         Personal Info
       </h2>
       <p className="text-Cool_gray tracking-tighter self-start text-sm">
-        Please provide your name, email, address, and phone
+        Please provide your name, address, and phone
       </p>
       <label className="text-Marine_blue font-semibold" htmlFor="name">
         Name
@@ -19,14 +19,14 @@ const Form1 = () => {
         name="name"
         className="border-Light_gray border-[1px] p-3 w-full rounded-xl"
       />
-      <label className="text-Marine_blue font-semibold" htmlFor="email">
-        Email Address
+      <label className="text-Marine_blue font-semibold" htmlFor="address">
+        Address
       </label>
-      <Field
-        type="email"
-        placeholder="e.g. royjoseph@gmail.com"
-        id="email"
-        name="email"
+      <Field as="textarea"
+        type="text"
+        placeholder="e.g. XYZ Street, Avenue Center"
+        id="address"
+        name="address"
         className="border-Light_gray border-[1px] p-3 w-full rounded-xl"
       />
       <label className="text-Marine_blue font-semibold" htmlFor="phone">

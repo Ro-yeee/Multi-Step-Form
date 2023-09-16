@@ -1,6 +1,8 @@
+import Step from "./Step";
+
 const StepNav = () => {
   return (
-    <div className="relative flex-1">
+    <div className="relative">
       <img
         src="./images/bg-sidebar-desktop.svg"
         alt="Background Desktop"
@@ -9,13 +11,13 @@ const StepNav = () => {
       <img
         src="./images/bg-sidebar-mobile.svg"
         alt="Background Mobile"
-        className="hidden  max-lg:block w-screen object-cover h-56 absolute "
+        className="hidden  max-lg:block w-screen object-cover h-[16rem] absolute "
       />
-      <div className="z-50 relative">
-        <h2>1</h2>
-        <h2>2</h2>
-        <h2>3</h2>
-        <h2>4</h2>
+      <div className="z-50 relative p-8 pt-12 flex flex-col gap-8 justify-center max-lg:flex-row">
+        <Step index={1} detail={'your info'} />
+        <Step index={2} detail={'Account info'} />
+        <Step index={3} detail={'Select plan'} />
+        <Step index={4} detail={'Add-ons'} />
       </div>
     </div>
   );
