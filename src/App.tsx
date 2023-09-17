@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import Form2 from './components/Form2';
+import Form2 from './forms/Form2';
 import NextButton from './components/NextButton';
 import StepNav from './components/StepNav';
 import { Formik, Form } from 'formik';
-import Form1 from './components/Form1';
-import Form3 from './components/Form3';
+import Form1 from './forms/Form1';
+import Form3 from './forms/Form3';
+import Form4 from './forms/Form4';
+
 
 function App() {
   const [index, setIndex] = useState(0);
@@ -23,26 +25,30 @@ function App() {
                 number: '',
                 user_name: '',
                 password: '',
-                plan: '',
-                yearly: false
+                plan: 'Arcade',
+                yearly: false,
+                addOn : []
               }}
               onSubmit={(values) => {
-                if (index === 2) {
+                if (index === 3) {
                   console.log('FINISH');
                   console.log(values);
                   setIndex(0);
                 }
                 if (index === 0) setIndex(1);
                 if (index === 1) setIndex(2);
+                if (index === 2) setIndex(3);
               }}>
-              {({values}) => (
+              {({ values }) => (
                 <Form className="flex flex-col h-full w-full font-mono pl-10 pt-10 pr-12 max-lg:p-4">
                   {index === 0 ? (
                     <Form1 />
                   ) : index === 1 ? (
                     <Form2 />
-                  ) : (
+                  ) : index === 2 ? (
                     <Form3 values={values} />
+                  ) : (
+                    <Form4 values={values} />
                   )}
                   <NextButton />
                 </Form>

@@ -8,7 +8,8 @@ import { Field } from "formik";
    user_name: string;
    password: string;
    plan: string;
-   yearly: boolean
+   yearly: boolean;
+   addOn: string[];
  };
 
 const Form3 = (props :{values:valueType}) => {

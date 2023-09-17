@@ -15,7 +15,7 @@ const StepNav = () => {
       />
       <div className="z-50 relative p-8 pt-12 flex flex-col gap-8 justify-center max-lg:flex-row">
         <Step index={1} detail={'your info'} />
-        <Step index={2} detail={'Account info'} />
+        <Step index={2} detail={'Account'} />
         <Step index={3} detail={'Select plan'} />
         <Step index={4} detail={'Add-ons'} />
       </div>
