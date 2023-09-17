@@ -1,20 +1,7 @@
-import { Field } from "formik";
+import { Field } from 'formik';
+import { FormValueType } from '../Types';
 
- type valueType = {
-   name: string;
-   address: string;
-   email: string;
-   number: string;
-   user_name: string;
-   password: string;
-   plan: string;
-   yearly: boolean;
-   addOn: string[];
- };
-
-
-const Form4 = (props :{values:valueType}) => {
-    const values: valueType = props.values
+const Form4 = ({ values }: FormValueType) => {
   return (
     <div className="overflow-auto flex flex-col gap-4 h-full w-full items-start font-mono text-left">
       <h2 className="text-Marine_blue font-black text-3xl tracking-[-2px]">
@@ -99,6 +86,6 @@ const Form4 = (props :{values:valueType}) => {
       </div>
     </div>
   );
-}
+};
 
-export default Form4
+export default Form4;

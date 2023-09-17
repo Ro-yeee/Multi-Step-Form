@@ -1,6 +1,13 @@
-import Step from "./Step";
 
-const StepNav = () => {
+type gotoFunctionindex = {
+  goto(val: number): void;
+  currentIndex: number;
+};
+
+const StepNav = ({ goto, currentIndex }: gotoFunctionindex) => {
+
+  const steps: string[] = ['your info', 'Account', 'Select plan', 'Add-ons'];
+
   return (
     <div className="relative">
       <img
@@ -14,10 +21,28 @@ const StepNav = () => {
         className="hidden  max-lg:block w-screen object-cover h-[16rem] absolute "
       />
       <div className="z-50 relative p-8 pt-12 flex flex-col gap-8 justify-center max-lg:flex-row">
-        <Step index={1} detail={'your info'} />
-        <Step index={2} detail={'Account'} />
-        <Step index={3} detail={'Select plan'} />
-        <Step index={4} detail={'Add-ons'} />
+        {steps.map((item, index) => (
+          <div
+            onClick={() => goto(index)}
+            className="flex items-center gap-6 cursor-pointer">
+            <div
+              className={`${
+                currentIndex  === index
+                  ? 'bg-Light_gray text-black'
+                  : 'text-Light_gray'
+              } flex justify-center items-center w-11 h-11 border-Light_blue border-[1px] duration-300 ease-in rounded-full font-bold`}>
+              {index+1}
+            </div>
+            <div className="max-lg:hidden">
+              <h3 className="text-Light_gray font-medium text-sm">
+                STEP {index+1}
+              </h3>
+              <h2 className="text-base font-extrabold text-white">
+                {item.toUpperCase()}
+              </h2>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -22,7 +22,8 @@ const Form1 = () => {
       <label className="text-Marine_blue font-semibold" htmlFor="address">
         Address
       </label>
-      <Field as="textarea"
+      <Field
+        as="textarea"
         type="text"
         placeholder="e.g. XYZ Street, Avenue Center"
         id="address"

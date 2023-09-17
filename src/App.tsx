@@ -6,15 +6,29 @@ import { Formik, Form } from 'formik';
 import Form1 from './forms/Form1';
 import Form3 from './forms/Form3';
 import Form4 from './forms/Form4';
-
+import BackButton from './components/BackButton';
 
 function App() {
-  const [index, setIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const next = () => {
+    if (currentIndex === 3) return;
+    setCurrentIndex(currentIndex + 1);
+  };
+
+  const back = () => {
+    if (currentIndex === 0) return;
+    setCurrentIndex(currentIndex - 1);
+  };
+
+  const goto = (step: number) => {
+    setCurrentIndex(step);
+  };
 
   return (
     <div className=" w-full flex justify-center items-center p-0 lg:py-12">
       <div className="bg-Alabaster flex max-lg:flex-col h-[600px] w-[1000px] p-4 rounded-lg max-lg:h-full max-lg:w-screen max-lg:rounded-none max-lg:p-0 max-lg:bg-transparent">
-        <StepNav />
+        <StepNav goto={goto} currentIndex={currentIndex} />
         <div className="flex-[2] z-20 w-full h-full p-8 bg-transparent max-lg:max-w-[800px] self-center">
           <div className="max-lg:bg-white w-full h-full rounded-2xl">
             <Formik
@@ -27,30 +41,28 @@ function App() {
                 password: '',
                 plan: 'Arcade',
                 yearly: false,
-                addOn : []
+                addOn: [],
               }}
               onSubmit={(values) => {
-                if (index === 3) {
-                  console.log('FINISH');
+                next();
+                if(currentIndex === 3)
                   console.log(values);
-                  setIndex(0);
-                }
-                if (index === 0) setIndex(1);
-                if (index === 1) setIndex(2);
-                if (index === 2) setIndex(3);
               }}>
               {({ values }) => (
                 <Form className="flex flex-col h-full w-full font-mono pl-10 pt-10 pr-12 max-lg:p-4">
-                  {index === 0 ? (
+                  {currentIndex === 0 ? (
                     <Form1 />
-                  ) : index === 1 ? (
+                  ) : currentIndex === 1 ? (
                     <Form2 />
-                  ) : index === 2 ? (
+                  ) : currentIndex === 2 ? (
                     <Form3 values={values} />
                   ) : (
                     <Form4 values={values} />
                   )}
-                  <NextButton />
+                  <div className="w-full flex flex-row justify-between">
+                    <BackButton index={currentIndex} back={back} />
+                    <NextButton index={currentIndex} />
+                  </div>
                 </Form>
               )}
             </Formik>
