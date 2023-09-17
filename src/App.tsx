@@ -7,9 +7,12 @@ import Form1 from './forms/Form1';
 import Form3 from './forms/Form3';
 import Form4 from './forms/Form4';
 import BackButton from './components/BackButton';
+import SuccessPage from './forms/SuccessPage';
 
 function App() {
+
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [success,setSuccess] = useState(false)
 
   const next = () => {
     if (currentIndex === 3) return;
@@ -31,6 +34,8 @@ function App() {
         <StepNav goto={goto} currentIndex={currentIndex} />
         <div className="flex-[2] z-20 w-full h-full p-8 bg-transparent max-lg:max-w-[800px] self-center">
           <div className="max-lg:bg-white w-full h-full rounded-2xl">
+            {
+              success ? <SuccessPage/> :
             <Formik
               initialValues={{
                 name: '',
@@ -45,8 +50,10 @@ function App() {
               }}
               onSubmit={(values) => {
                 next();
-                if(currentIndex === 3)
+                if(currentIndex === 3){
                   console.log(values);
+                  setSuccess(true);
+                }
               }}>
               {({ values }) => (
                 <Form className="flex flex-col h-full w-full font-mono pl-10 pt-10 pr-12 max-lg:p-4">
@@ -66,6 +73,7 @@ function App() {
                 </Form>
               )}
             </Formik>
+            }
           </div>
         </div>
       </div>

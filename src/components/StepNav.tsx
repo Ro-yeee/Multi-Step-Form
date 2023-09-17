@@ -30,7 +30,7 @@ const StepNav = ({ goto, currentIndex }: gotoFunctionindex) => {
                 currentIndex  === index
                   ? 'bg-Light_gray text-black'
                   : 'text-Light_gray'
-              } flex justify-center items-center w-11 h-11 border-Light_blue border-[1px] duration-300 ease-in rounded-full font-bold`}>
+              } flex justify-center items-center w-11 h-11 border-Light_blue border-[1px] duration-400 ease-in-out rounded-full font-bold`}>
               {index+1}
             </div>
             <div className="max-lg:hidden">
