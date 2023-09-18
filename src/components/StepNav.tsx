@@ -1,9 +1,8 @@
-type gotoFunctionindex = {
-  goto(val: number): void;
+type dataType = {
   currentIndex: number;
 };
 
-const StepNav = ({ goto, currentIndex }: gotoFunctionindex) => {
+const StepNav = ({ currentIndex }: dataType) => {
   const steps: string[] = ['your info', 'Account', 'Select plan', 'Add-ons'];
 
   return (
@@ -22,8 +21,7 @@ const StepNav = ({ goto, currentIndex }: gotoFunctionindex) => {
         {steps.map((item, index) => (
           <div
             key={item}
-            onClick={() => goto(index)}
-            className="flex items-center gap-6 cursor-pointer">
+            className="flex items-center gap-6">
             <div
               className={`${
                 currentIndex === index
