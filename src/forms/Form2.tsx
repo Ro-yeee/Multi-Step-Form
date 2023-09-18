@@ -1,8 +1,8 @@
-import { Field } from 'formik';
+import { ErrorMessage, Field } from 'formik';
 
 const Form2 = () => {
   return (
-    <div className="overflow-auto flex flex-col gap-4 h-full w-full items-start font-mono text-left">
+    <div className="overflow-auto flex flex-col gap-2 h-full w-full items-start font-mono text-left">
       <h2 className="text-Marine_blue font-black text-3xl tracking-[-2px]">
         Account Info
       </h2>
@@ -19,6 +19,9 @@ const Form2 = () => {
         name="email"
         className="border-Light_gray border-[1px] p-3 w-full rounded-xl"
       />
+      <span className="text-Strawberry_red text-sm">
+        <ErrorMessage name="email" />
+      </span>
       <label className="text-Marine_blue font-semibold" htmlFor="user_name">
         User Name
       </label>
@@ -29,6 +32,9 @@ const Form2 = () => {
         name="user_name"
         className="border-Light_gray border-[1px] p-3 w-full rounded-xl"
       />
+      <span className="text-Strawberry_red text-sm">
+        <ErrorMessage name="user_name" />
+      </span>
       <label className="text-Marine_blue font-semibold" htmlFor="password">
         Password
       </label>
@@ -39,6 +45,9 @@ const Form2 = () => {
         name="password"
         className="border-Light_gray border-[1px] p-3 w-full rounded-xl"
       />
+      <span className="text-Strawberry_red text-sm">
+        <ErrorMessage name="password" />
+      </span>
     </div>
   );
 };

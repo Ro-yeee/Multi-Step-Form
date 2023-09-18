@@ -1,4 +1,3 @@
-
 const SuccessPage = () => {
   return (
     <div className="overflow-auto flex p-12 flex-col gap-6 h-full w-full justify-center items-center font-mono">
@@ -13,6 +12,6 @@ const SuccessPage = () => {
       </p>
     </div>
   );
-}
+};
 
-export default SuccessPage
+export default SuccessPage;

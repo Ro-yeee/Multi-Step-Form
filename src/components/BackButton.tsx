@@ -1,19 +1,19 @@
 type dataType = {
   index: number;
-  back(): void;
+  back(): void
 };
 
 const BackButton = ({ index, back }: dataType) => {
-  if (index > 0)
+    if(index > 0)
     return (
-      <button
+        <button
         type="button"
-        className="text-Cool_gray font-extrabold py-4 px-6 mt-4 rounded-xl ease-in-out duration-200 hover:text-Purplish_blue"
+        className= "text-Cool_gray font-extrabold py-4 px-6 mt-4 rounded-xl ease-in-out duration-200 hover:text-Purplish_blue"
         onClick={back}>
         Go Back
-      </button>
+        </button>
     );
-  else return '';
+    else return ""
 };
 
 export default BackButton;

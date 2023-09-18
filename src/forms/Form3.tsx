@@ -3,7 +3,7 @@ import { FormValueType } from '../Types';
 
 const Form3 = ({ values }: FormValueType) => {
   return (
-    <div className="overflow-auto flex flex-col gap-4 h-full w-full items-start font-mono text-left">
+    <div className="overflow-auto flex flex-col gap-2 h-full w-full items-start font-mono text-left">
       <h2 className="text-Marine_blue font-black text-3xl tracking-[-2px]">
         Select you plan
       </h2>

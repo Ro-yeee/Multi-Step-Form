@@ -1,11 +1,9 @@
-
 type gotoFunctionindex = {
   goto(val: number): void;
   currentIndex: number;
 };
 
 const StepNav = ({ goto, currentIndex }: gotoFunctionindex) => {
-
   const steps: string[] = ['your info', 'Account', 'Select plan', 'Add-ons'];
 
   return (
@@ -23,19 +21,20 @@ const StepNav = ({ goto, currentIndex }: gotoFunctionindex) => {
       <div className="z-50 relative p-8 pt-12 flex flex-col gap-8 justify-center max-lg:flex-row">
         {steps.map((item, index) => (
           <div
+            key={item}
             onClick={() => goto(index)}
             className="flex items-center gap-6 cursor-pointer">
             <div
               className={`${
-                currentIndex  === index
+                currentIndex === index
                   ? 'bg-Light_gray text-black'
                   : 'text-Light_gray'
               } flex justify-center items-center w-11 h-11 border-Light_blue border-[1px] duration-400 ease-in-out rounded-full font-bold`}>
-              {index+1}
+              {index + 1}
             </div>
             <div className="max-lg:hidden">
               <h3 className="text-Light_gray font-medium text-sm">
-                STEP {index+1}
+                STEP {index + 1}
               </h3>
               <h2 className="text-base font-extrabold text-white">
                 {item.toUpperCase()}
